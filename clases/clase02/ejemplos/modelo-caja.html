@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modelo de Caja</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 2rem;
+        background-color: #ecf0f1;
+      }
+
+      .caja-ejemplo {
+        /* Contenido */
+        width: 300px;
+        height: 150px;
+
+        /* Padding (espacio interno) */
+        padding: 20px;
+
+        /* Border */
+        border: 5px solid #3498db;
+
+        /* Margin (espacio externo) */
+        margin: 20px;
+
+        /* Estilos visuales */
+        background-color: #e8f4fd;
+        color: #2c3e50;
+
+        /* Box-sizing */
+        box-sizing: border-box;
+      }
+
+      .sin-box-sizing {
+        width: 300px;
+        height: 150px;
+        padding: 20px;
+        border: 5px solid #e74c3c;
+        margin: 20px;
+        background-color: #fadbd8;
+        /* SIN box-sizing: border-box */
+      }
+
+      .explicacion {
+        background-color: white;
+        padding: 1rem;
+        margin: 1rem 0;
+        border-radius: 5px;
+        border-left: 4px solid #f39c12;
+      }
+
+      .demo-spacing {
+        background-color: #d5dbdb;
+        padding: 10px;
+        margin: 10px 0;
+      }
+
+      .demo-spacing-2 {
+        background-color: #aed6f1;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .demo-spacing-3 {
+        background-color: #f9e79f;
+        padding: 30px;
+        margin: 30px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Modelo de Caja CSS</h1>
+
+    <div class="explicacion">
+      <h3>Con box-sizing: border-box (RECOMENDADO)</h3>
+      <p>El ancho total será exactamente 300px</p>
+    </div>
+
+    <div class="caja-ejemplo">
+      <p>Esta caja tiene:</p>
+      <ul>
+        <li>width: 300px</li>
+        <li>padding: 20px</li>
+        <li>border: 5px</li>
+        <li>margin: 20px</li>
+        <li><strong>box-sizing: border-box</strong></li>
+      </ul>
+    </div>
+
+    <div class="explicacion">
+      <h3>Sin box-sizing: border-box</h3>
+      <p>El ancho total será 300px + 40px (padding) + 10px (border) = 350px</p>
+    </div>
+
+    <div class="sin-box-sizing">
+      <p>Esta caja tiene las mismas medidas pero SIN box-sizing: border-box</p>
+      <p>¡Nota cómo es más ancha!</p>
+    </div>
+
+    <div class="demo-spacing">Padding y margin: 10px</div>
+    <div class="demo-spacing-2">Padding y margin: 20px</div>
+    <div class="demo-spacing-3">Padding y margin: 30px</div>
+
+    <!-- Explicar a estudiantes:
+     - Diferencia entre padding y margin
+     - Por qué usar box-sizing: border-box
+     - Cómo inspeccionar en DevTools
+     - Espaciado visual apropiado
+-->
+  </body>
+</html>

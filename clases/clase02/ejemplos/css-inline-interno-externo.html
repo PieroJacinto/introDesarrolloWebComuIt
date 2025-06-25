@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formas de Incluir CSS</title>
+    
+    <!-- CSS INTERNO -->
+    <style>
+        .interno {
+            background-color: #e74c3c;
+            color: white;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+    </style>
+    
+    <!-- CSS EXTERNO (recomendado) -->
+    <link rel="stylesheet" href="ejemplo-externo.css">
+</head>
+<body>
+    <h1>Formas de Incluir CSS</h1>
+    
+    <!-- CSS INLINE (evitar) -->
+    <p style="color: red; font-size: 20px;">
+        Este párrafo usa CSS inline (evitar)
+    </p>
+    
+    <!-- CSS INTERNO -->
+    <p class="interno">
+        Este párrafo usa CSS interno
+    </p>
+    
+    <!-- CSS EXTERNO -->
+    <p class="externo">
+        Este párrafo usa CSS externo (recomendado)
+    </p>
+    
+    <!-- DEMOSTRACIÓN PARA ESTUDIANTES:
+         1. Mostrar las 3 formas
+         2. Explicar por qué externo es mejor
+         3. Mostrar cómo vincular archivo CSS
+    -->
+</body>
+</html>

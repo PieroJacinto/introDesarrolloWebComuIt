@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colores y Tipografías</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            padding: 2rem;
+        }
+        
+        /* COLORES DIFERENTES */
+        .color-nombre {
+            color: red;
+        }
+        
+        .color-hex {
+            color: #3498db;
+        }
+        
+        .color-rgb {
+            color: rgb(231, 76, 60);
+        }
+        
+        .color-rgba {
+            background-color: rgba(52, 152, 219, 0.3);
+            padding: 1rem;
+        }
+        
+        /* TIPOGRAFÍAS */
+        .titulo-principal {
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .subtitulo {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .texto-destacado {
+            font-style: italic;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        
+        .texto-centrado {
+            text-align: center;
+        }
+        
+        .texto-justificado {
+            text-align: justify;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+    <!-- DEMOSTRACIÓN: Colores -->
+    <h1 class="titulo-principal">Colores y Tipografías</h1>
+    
+    <h2>Formas de Definir Colores</h2>
+    <p class="color-nombre">Texto con color por nombre: red</p>
+    <p class="color-hex">Texto con color hexadecimal: #3498db</p>
+    <p class="color-rgb">Texto con color RGB: rgb(231, 76, 60)</p>
+    <p class="color-rgba">Texto con fondo RGBA (transparente)</p>
+    
+    <!-- DEMOSTRACIÓN: Tipografías -->
+    <h2 class="subtitulo">Propiedades de Texto</h2>
+    <p class="texto-destacado">Texto en cursiva, negrita y subrayado</p>
+    <p class="texto-centrado">Texto centrado</p>
+    <p class="texto-justificado">
+        Este es un párrafo justificado. Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+        Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    
+    <!-- Explicar a estudiantes:
+         - Diferencia entre nombre, hex, rgb
+         - Cuándo usar cada uno
+         - Google Fonts
+         - Jerarquía tipográfica
+         - Legibilidad
+    -->
+</body>
+</html>

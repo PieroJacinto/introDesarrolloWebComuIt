@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectores CSS</title>
+    <style>
+        /* Selector de elemento */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        
+        /* Selector de clase */
+        .destacado {
+            background-color: #f39c12;
+            color: white;
+            padding: 1rem;
+            border-radius: 5px;
+        }
+        
+        /* Selector de ID */
+        #especial {
+            border: 3px solid #e74c3c;
+            padding: 1rem;
+        }
+        
+        /* Selector descendiente */
+        nav ul {
+            list-style: none;
+            background-color: #3498db;
+            padding: 1rem;
+        }
+        
+        /* Selector múltiple */
+        h2, h3 {
+            color: #8e44ad;
+        }
+        
+        /* Pseudo-clase */
+        a:hover {
+            color: #e74c3c;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- DEMOSTRACIÓN: Diferentes tipos de selectores -->
+    
+    <h1>Título con selector de elemento</h1>
+    
+    <p class="destacado">Párrafo con selector de clase</p>
+    
+    <p id="especial">Párrafo con selector de ID</p>
+    
+    <h2>Subtítulo con selector múltiple</h2>
+    <h3>Otro subtítulo con selector múltiple</h3>
+    
+    <nav>
+        <ul>
+            <li><a href="#">Enlace 1</a></li>
+            <li><a href="#">Enlace 2</a></li>
+            <li><a href="#">Enlace 3</a></li>
+        </ul>
+    </nav>
+    
+    <p>Un <a href="#">enlace normal</a> con hover effect</p>
+    
+    <!-- Explicar a estudiantes:
+         - Diferencia entre clase e ID
+         - Cuándo usar cada selector
+         - Especificidad básica
+         - Hover effects
+    -->
+</body>
+</html>
