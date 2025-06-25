@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Simple</title>
+</head>
+<body>
+    <!-- DEMOSTRACIÓN: Formulario básico -->
+    
+    <h1>Contacto</h1>
+    
+    <form>
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+        </p>
+        
+        <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </p>
+        
+        <p>
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" name="asunto">
+        </p>
+        
+        <p>
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </p>
+        
+        <p>
+            <button type="submit">Enviar</button>
+        </p>
+    </form>
+    
+    <!-- Explicar a los estudiantes:
+         - label for="id"
+         - input types: text, email
+         - textarea
+         - required
+         - button type="submit"
+    -->
+</body>
+</html>
