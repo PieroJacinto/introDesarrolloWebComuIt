@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios Básicos - Solución</title>
+</head>
+<body>
+    <header>
+        <h1>Ejercicio: Formularios</h1>
+        <p>Practica creando formularios básicos</p>
+    </header>
+    
+    <main>
+        <!-- FORMULARIO DE LOGIN -->
+        <section>
+            <h2>Login</h2>
+            <form>
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="email" required>
+                
+                <label for="login-password">Contraseña:</label>
+                <input type="password" id="login-password" name="password" required>
+                
+                <input type="checkbox" id="recordar" name="recordar">
+                <label for="recordar">Recordarme</label>
+                
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+        </section>
+
+        <!-- FORMULARIO DE REGISTRO -->
+        <section>
+            <h2>Registro</h2>
+            <form>
+                <label for="registro-nombre">Nombre completo:</label>
+                <input type="text" id="registro-nombre" name="nombre" required>
+                
+                <label for="registro-email">Email:</label>
+                <input type="email" id="registro-email" name="email" required>
+                
+                <label for="conociste">¿Cómo nos conociste?</label>
+                <select id="conociste" name="conociste">
+                    <option value="">Seleccionar...</option>
+                    <option value="google">Google</option>
+                    <option value="redes">Redes sociales</option>
+                    <option value="amigo">Un amigo</option>
+                </select>
+                
+                <p>Sexo:</p>
+                <input type="radio" id="masculino" name="sexo" value="masculino">
+                <label for="masculino">Masculino</label>
+                
+                <input type="radio" id="femenino" name="sexo" value="femenino">
+                <label for="femenino">Femenino</label>
+                
+                <input type="radio" id="otro" name="sexo" value="otro">
+                <label for="otro">Otro</label>
+                
+                <input type="checkbox" id="terminos" name="terminos" required>
+                <label for="terminos">Acepto términos y condiciones</label>
+                
+                <button type="submit">Registrarse</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>Ejercicio de formularios - Clase 1</p>
+    </footer>
+</body>
+</html>
