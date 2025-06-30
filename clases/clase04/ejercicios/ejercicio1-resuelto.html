@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- ✅ RESUELTO: Viewport meta tag agregado -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Ejercicio 1: Navegación Responsive - RESUELTO</title>
+    <link rel="stylesheet" href="./ejercicio-1.css">
+</head>
+<body>
+    <header>
+        <div class="logo">🚀 Mi Sitio Responsive</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card">
+            <h1>✅ Ejercicio 1: RESUELTO</h1>
+            <p><strong>¡Perfecto!</strong> Esta navegación ahora funciona en todos los dispositivos</p>
+            
+            <h2>🎯 Lo que se resolvió:</h2>
+            <ol>
+                <li><strong>✅ Viewport meta tag</strong> agregado</li>
+                <li><strong>✅ Navegación móvil:</strong>
+                    <ul>
+                        <li>flex-direction: column en móvil</li>
+                        <li>gap reducido para ahorrar espacio</li>
+                        <li>padding más grande en links</li>
+                        <li>display: block para tocar fácil</li>
+                    </ul>
+                </li>
+                <li><strong>✅ Botones móviles:</strong>
+                    <ul>
+                        <li>Padding más grande</li>
+                        <li>display: block para ancho completo</li>
+                        <li>Centrados</li>
+                    </ul>
+                </li>
+                <li><strong>✅ Servicios responsive:</strong>
+                    <ul>
+                        <li>flex-direction: column en móvil</li>
+                        <li>Apilados verticalmente</li>
+                    </ul>
+                </li>
+                <li><strong>✅ Optimizaciones adicionales:</strong>
+                    <ul>
+                        <li>Cards con menos padding</li>
+                        <li>Tipografía ajustada</li>
+                        <li>Footer optimizado</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h2>🧪 Testing Completado:</h2>
+            <ul>
+                <li>✅ Móvil (320px - 767px): Navegación vertical</li>
+                <li>✅ Tablet (768px+): Navegación horizontal</li>
+                <li>✅ Desktop (1024px+): Layout completo</li>
+                <li>✅ Sin scroll horizontal en ningún tamaño</li>
+                <li>✅ Botones fáciles de tocar en móvil</li>
+            </ul>
+
+            <a href="#servicios" class="btn">Ver Servicios</a>
+        </div>
+
+        <div class="card" id="servicios">
+            <h2>🛠️ Nuestros Servicios</h2>
+            <div class="services">
+                <div class="service">
+                    <h3>💻 Desarrollo</h3>
+                    <p>Sitios web modernos y funcionales</p>
+                </div>
+                <div class="service">
+                    <h3>🎨 Diseño</h3>
+                    <p>Interfaces atractivas y usables</p>
+                </div>
+                <div class="service">
+                    <h3>📱 Responsive</h3>
+                    <p>Perfecto en todos los dispositivos</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="contacto">
+            <h2>📞 Contacto</h2>
+            <p>¿Listo para hacer tu sitio responsive?</p>
+            <a href="#" class="btn">Contactar Ahora</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Sitio Responsive</p>
+        <p>¡Responsive design dominado!</p>
+    </footer>
+
+    <!-- ===== NOTAS PARA EL PROFESOR ===== -->
+    <!--
+    
+    🎯 PUNTOS CLAVE AL REVISAR CON ESTUDIANTES:
+    
+    1. **Viewport Meta Tag:**
+       - Sin esto, nada funciona
+       - Debe ir en TODAS las páginas
+       - Es lo primero que verificar
+    
+    2. **Mobile-First Approach:**
+       - CSS base es para móvil
+       - Media queries para pantallas más grandes
+       - Más fácil expandir que comprimir
+    
+    3. **Breakpoint Usado:**
+       - max-width: 767px para móvil
+       - 768px+ automáticamente usa estilos base
+       - Pueden usar min-width si prefieren
+    
+    4. **Flexbox + Media Queries:**
+       - flex-direction: column en móvil
+       - flex-direction: row (default) en desktop
+       - gap se puede ajustar por tamaño
+    
+    5. **Touch-Friendly:**
+       - Padding más grande en botones móviles
+       - Mínimo 44px de altura para tocar
+       - display: block para botones de ancho completo
+    
+    🚨 ERRORES COMUNES QUE VER:
+    - Olvidar viewport meta tag
+    - Media query mal sintaxis
+    - No probar en diferentes tamaños
+    - Botones muy pequeños para tocar
+    - Scroll horizontal
+    
+    ⏰ TIMING: 15-20 minutos para completar
+    🔧 HERRAMIENTAS: DevTools responsive mode
+    
+    -->
+</body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Efectos Básicos - RESUELTO</title>
+    <link rel="stylesheet" href="./ejercicio2-resuelto.css">
+</head>
+<body>
+    <header>
+        <h1>✨ Ejercicio 2: Efectos Básicos - RESUELTO</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="card">
+            <h1>✅ Efectos Interactivos Completados</h1>
+            <p><strong>¡Perfecto!</strong> Todos los elementos ahora responden suavemente al usuario</p>
+            
+            <h2>🎯 Lo que se resolvió:</h2>
+            <ol>
+                <li><strong>✅ Navegación:</strong> Hover con background-color: #34495e</li>
+                <li><strong>✅ Cards:</strong> Hover con translateY(-5px) y sombra aumentada</li>
+                <li><strong>✅ Botones:</strong> Hover con colores más oscuros + elevación + sombra</li>
+                <li><strong>✅ Formularios:</strong> Focus con border azul y box-shadow sutil</li>
+                <li><strong>✅ Productos:</strong> Hover con elevación y sombra profunda</li>
+                <li><strong>✅ Enlaces:</strong> Hover con color más oscuro y subrayado</li>
+                <li><strong>✅ Transiciones:</strong> transition: all 0.3s ease para suavidad</li>
+            </ol>
+
+            <h2>🎨 Efectos Implementados:</h2>
+            <ul>
+                <li><strong>:hover</strong> - Respuesta visual al pasar el mouse</li>
+                <li><strong>:focus</strong> - Feedback claro en formularios</li>
+                <li><strong>transform: translateY()</strong> - Elevación sutil</li>
+                <li><strong>box-shadow</strong> - Profundidad y dimensión</li>
+                <li><strong>transition</strong> - Suavidad en todos los cambios</li>
+            </ul>
+
+            <div style="background: #e8f5e8; padding: 1rem; border-radius: 5px; margin: 1rem 0;">
+                <strong>💡 Resultado:</strong> La interfaz se siente moderna, responsive y profesional
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔘 Botones Interactivos</h2>
+            <p>Prueba estos botones con efectos hover:</p>
+            <a href="#" class="btn">Botón Principal</a>
+            <a href="#" class="btn btn-secondary">Botón Secundario</a>
+            <a href="#" class="btn btn-success">Botón Éxito</a>
+        </div>
+
+        <div class="card" id="productos">
+            <h2>🛍️ Productos con Hover</h2>
+            <p>Estos productos se elevan suavemente al pasar el mouse:</p>
+            <div class="products">
+                <div class="product">
+                    <img src="https://via.placeholder.com/300x200/3498db/white?text=Producto+1" alt="Producto 1">
+                    <div class="product-info">
+                        <h3>Producto Increíble</h3>
+                        <p>Descripción del producto que es fantástico.</p>
+                        <div class="price">$99.99</div>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300x200/27ae60/white?text=Producto+2" alt="Producto 2">
+                    <div class="product-info">
+                        <h3>Otro Producto</h3>
+                        <p>Descripción de este otro producto genial.</p>
+                        <div class="price">$149.99</div>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+                <div class="product">
+                    <img src="https://via.placeholder.com/300x200/e74c3c/white?text=Producto+3" alt="Producto 3">
+                    <div class="product-info">
+                        <h3>Producto Premium</h3>
+                        <p>El mejor producto de nuestra colección.</p>
+                        <div class="price">$199.99</div>
+                        <a href="#" class="btn">Comprar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" id="contacto">
+            <h2>📧 Formulario con Focus</h2>
+            <p>Haz click en los campos para ver el efecto focus:</p>
+            <form>
+                <div class="form-group">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono:</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="+54 11 1234-5678">
+                </div>
+                <div class="form-group">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                </div>
+                <button type="submit" class="btn">Enviar Mensaje</button>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>🔗 Enlaces Interactivos</h2>
+            <p>Estos enlaces cambian color y se subrayan al hover:</p>
+            <ul>
+                <li><a href="#" class="link">Visita nuestro blog</a></li>
+                <li><a href="#" class="link">Conoce nuestro equipo</a></li>
+                <li><a href="#" class="link">Lee nuestras políticas</a></li>
+                <li><a href="#" class="link">Síguenos en redes sociales</a></li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🎯 Impacto en UX:</h2>
+            <ul>
+                <li><strong>Feedback inmediato:</strong> Los usuarios saben qué es clickeable</li>
+                <li><strong>Sensación premium:</strong> Las transiciones suaves mejoran la percepción</li>
+                <li><strong>Accesibilidad:</strong> Focus visible ayuda a navegación por teclado</li>
+                <li><strong>Microinteracciones:</strong> Pequeños detalles que marcan la diferencia</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Efectos Básicos Dominados</p>
+        <p>¡Interfaces modernas y profesionales!</p>
+    </footer>
+
+    <!-- ===== NOTAS PARA EL PROFESOR ===== -->
+    <!--
+    
+    🎯 PUNTOS CLAVE AL REVISAR:
+    
+    1. **Conceptos Fundamentales:**
+       - :hover para interactividad visual
+       - :focus para accesibilidad en formularios
+       - transform para movimiento sutil
+       - box-shadow para profundidad
+       - transition para suavidad
+    
+    2. **Mejores Prácticas Implementadas:**
+       - 0.3s timing perfecto para UX
+       - translateY() sutil (no exagerado)
+       - outline: none + border-color para focus limpio
+       - transition: all 0.3s ease aplicado globalmente
+    
+    3. **Accesibilidad:**
+       - Focus visible en formularios
+       - Hover feedback en elementos interactivos
+       - Colores con suficiente contraste
+       - Transiciones que no causan mareo
+    
+    4. **Performance:**
+       - Solo animar propiedades que no causan reflow
+       - transform y opacity son las mejores opciones
+       - box-shadow es aceptable para hover
+    
+    🚨 ERRORES COMUNES A SEÑALAR:
+    - Animaciones muy rápidas (<0.2s) o muy lentas (>0.5s)
+    - Movimientos exagerados (translateY > -10px)
+    - Olvidar quitar outline sin reemplazarlo
+    - No probar focus con navegación por teclado
+    - Efectos que distraen del contenido
+    
+    💡 EXTENSIONES PARA AVANZADOS:
+    - Custom timing functions (cubic-bezier)
+    - Hover en elementos padre que afecta hijos
+    - Estados :active para feedback de click
+    - Combinaciones de transform (scale + translateY)
+    
+    ⏰ TIEMPO DE REVISIÓN: 10-15 minutos
+    🎯 ENFOQUE: Que vean la diferencia en experiencia de usuario
+    
+    -->
+</body>
+</html>
