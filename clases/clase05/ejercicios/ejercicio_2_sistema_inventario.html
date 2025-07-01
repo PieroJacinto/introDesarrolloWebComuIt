@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Sistema de Inventario</title>
+    <link rel="stylesheet" href="./ejercicio_2_sistema_inventario.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📦 Ejercicio 2: Sistema de Inventario</h1>
+        
+        <!-- Escenario -->
+        <div class="exercise-card">
+            <div class="scenario">
+                <h3>🏪 ESCENARIO:</h3>
+                <p>Eres el encargado de inventario de una tienda de electrónicos. Necesitas crear un sistema que maneje productos, calcule estadísticas de ventas y genere reportes automáticos. El sistema debe poder procesar listas de productos y encontrar información específica rápidamente.</p>
+            </div>
+        </div>
+
+        <!-- Objetivo -->
+        <div class="exercise-card">
+            <div class="objetive">
+                🎯 <strong>TU MISIÓN:</strong> Crear un sistema de inventario usando arrays, for loops y métodos básicos para gestionar productos y generar reportes de negocio.
+            </div>
+        </div>
+
+        <!-- Desafío 1 -->
+        <div class="exercise-card">
+            <h2>📱 Desafío 1: Catálogo de Productos</h2>
+            
+            <div class="requirements">
+                <strong>📋 REQUISITOS:</strong>
+                <ol>
+                    <li>Crear arrays para: nombres de productos, precios, stock disponible</li>
+                    <li>Los arrays deben tener al menos 6 productos electrónicos</li>
+                    <li>Usar for loops para mostrar el catálogo completo</li>
+                    <li>Calcular el valor total del inventario</li>
+                </ol>
+            </div>
+            
+            <div class="challenge">
+                <strong>⚡ DESAFÍO EXTRA:</strong> Identificar cuál es el producto más caro y cuál tiene mayor stock. Mostrar estadísticas del catálogo.
+            </div>
+            
+            <div class="code-area">// Crea tu sistema de inventario aquí
+// Sugerencia: 3 arrays paralelos (mismos índices = mismo producto)
+
+
+</div>
+            
+            <button class="test-button" onclick="testDesafio1()">🧪 Verificar Desafío 1</button>
+        </div>
+
+        <!-- Desafío 2 -->
+        <div class="exercise-card">
+            <h2>🛒 Desafío 2: Simulador de Ventas</h2>
+            
+            <div class="requirements">
+                <strong>📋 REQUISITOS:</strong>
+                <ol>
+                    <li>Crear un array de "ventas del día" con nombres de productos vendidos</li>
+                    <li>Puede haber productos repetidos (múltiples ventas)</li>
+                    <li>Contar cuántas veces se vendió cada producto</li>
+                    <li>Calcular ingresos totales del día</li>
+                </ol>
+            </div>
+            
+            <div class="challenge">
+                <strong>⚡ DESAFÍO EXTRA:</strong> Identificar el "producto estrella" (más vendido) y actualizar el stock después de las ventas.
+            </div>
+            
+            <div class="code-area">// Simula las ventas del día y actualiza inventario
+// Usar los arrays del desafío anterior
+
+
+</div>
+            
+            <button class="test-button" onclick="testDesafio2()">🧪 Verificar Desafío 2</button>
+        </div>
+
+        <!-- Desafío 3 -->
+        <div class="exercise-card">
+            <h2>🔍 Desafío 3: Sistema de Búsqueda y Alertas</h2>
+            
+            <div class="requirements">
+                <strong>📋 REQUISITOS:</strong>
+                <ol>
+                    <li>Implementar búsqueda de productos por nombre (usar indexOf o includes)</li>
+                    <li>Crear sistema de alertas para productos con stock bajo (menos de 5 unidades)</li>
+                    <li>Generar lista de productos agotados</li>
+                    <li>Calcular cuántos productos están "en riesgo" de agotarse</li>
+                </ol>
+            </div>
+            
+            <div class="challenge">
+                <strong>⚡ DESAFÍO EXTRA:</strong> Crear un "reporte ejecutivo" que muestre: productos más/menos vendidos, productos críticos, y recomendaciones de restock.
+            </div>
+            
+            <div class="code-area">// Sistema de búsqueda y alertas de inventario
+
+
+</div>
+            
+            <button class="test-button" onclick="testDesafio3()">🧪 Verificar Desafío 3</button>
+        </div>
+
+        <!-- Desafío 4 -->
+        <div class="exercise-card">
+            <h2>📊 Desafío 4: Análisis de Rentabilidad</h2>
+            
+            <div class="requirements">
+                <strong>📋 REQUISITOS:</strong>
+                <ol>
+                    <li>Crear array de costos de producción para cada producto</li>
+                    <li>Calcular ganancia por producto (precio - costo)</li>
+                    <li>Identificar productos más y menos rentables</li>
+                    <li>Calcular margen de ganancia promedio de la tienda</li>
+                </ol>
+            </div>
+            
+            <div class="challenge">
+                <strong>⚡ DESAFÍO EXTRA:</strong> Simular diferentes escenarios: ¿qué pasaría si aumentamos precios 10%? ¿Si reducimos costos 5%?
+            </div>
+            
+            <div class="code-area">// Análisis financiero del inventario
+
+
+</div>
+            
+            <button class="test-button" onclick="testDesafio4()">🧪 Verificar Desafío 4</button>
+        </div>
+
+        <!-- Instrucciones de prueba -->
+        <div class="exercise-card">
+            <h2>🧪 ¿Cómo Probar tu Sistema?</h2>
+            <div class="tip">
+                <strong>Recomendaciones:</strong>
+                <br>• Usa <strong>console.log()</strong> para mostrar cada paso
+                <br>• Prueba tu código en la <strong>Consola</strong> (F12)
+                <br>• Verifica que los for loops recorran correctamente
+                <br>• Asegúrate de que los arrays tengan los mismos índices
+                <br>• Los botones de verificación te dan pistas sobre la lógica
+            </div>
+        </div>
+
+        <!-- Resultado de pruebas -->
+        <div class="exercise-card">
+            <h2>📱 Verificación del Sistema</h2>
+            <div class="output-section">
+                <div id="test-output">⏰ Tiempo estimado: 35-45 minutos
+
+🎯 Este ejercicio avanzado te desafía a:
+• Gestionar múltiples arrays relacionados
+• Usar for loops para procesar datos complejos  
+• Implementar lógica de negocio real
+• Combinar métodos básicos de arrays
+• Generar reportes automáticos
+
+¡Al completar los 4 desafíos habrás creado un sistema funcional de inventario!</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function mostrarResultado(texto) {
+            const output = document.getElementById('test-output');
+            output.textContent += texto + '\n';
+        }
+
+        function limpiarResultado() {
+            document.getElementById('test-output').textContent = '';
+        }
+
+        function testDesafio1() {
+            limpiarResultado();
+            mostrarResultado("=== 📱 VERIFICANDO DESAFÍO 1: Catálogo de Productos ===");
+            mostrarResultado("");
+            mostrarResultado("🔍 Tu sistema debería incluir:");
+            mostrarResultado("  □ Array productos: ['iPhone', 'Samsung Galaxy', 'iPad', ...]");
+            mostrarResultado("  □ Array precios: [100000, 80000, 75000, ...]");
+            mostrarResultado("  □ Array stock: [15, 8, 20, ...]");
+            mostrarResultado("  □ For loop mostrando: 'iPhone - $100,000 (15 unidades)'");
+            mostrarResultado("  □ Cálculo: valorTotal += precios[i] * stock[i]");
+            mostrarResultado("");
+            mostrarResultado("💡 LÓGICA para producto más caro:");
+            mostrarResultado("   let maxPrecio = 0; let productoMasCaro = '';");
+            mostrarResultado("   En el loop: if (precios[i] > maxPrecio) { ... }");
+            mostrarResultado("");
+            mostrarResultado("🔍 Verifica tu catálogo en la CONSOLA (F12)");
+        }
+
+        function testDesafio2() {
+            limpiarResultado();
+            mostrarResultado("=== 🛒 VERIFICANDO DESAFÍO 2: Simulador de Ventas ===");
+            mostrarResultado("");
+            mostrarResultado("🔍 Tu simulador debería incluir:");
+            mostrarResultado("  □ Array ventasDelDia: ['iPhone', 'iPad', 'iPhone', 'Samsung', ...]");
+            mostrarResultado("  □ Contar ventas por producto usando for loops anidados");
+            mostrarResultado("  □ Calcular ingresos: sumar precio de cada venta");
+            mostrarResultado("  □ Actualizar stock: stock[i] = stock[i] - ventasContadas");
+            mostrarResultado("");
+            mostrarResultado("💡 LÓGICA para contar ventas:");
+            mostrarResultado("   for (let i = 0; i < productos.length; i++) {");
+            mostrarResultado("     let contador = 0;");
+            mostrarResultado("     for (let j = 0; j < ventasDelDia.length; j++) {");
+            mostrarResultado("       if (productos[i] === ventasDelDia[j]) contador++;");
+            mostrarResultado("     }");
+            mostrarResultado("   }");
+            mostrarResultado("");
+            mostrarResultado("🔍 Verifica las ventas en la CONSOLA (F12)");
+        }
+
+        function testDesafio3() {
+            limpiarResultado();
+            mostrarResultado("=== 🔍 VERIFICANDO DESAFÍO 3: Búsqueda y Alertas ===");
+            mostrarResultado("");
+            mostrarResultado("🔍 Tu sistema debería implementar:");
+            mostrarResultado("  □ Búsqueda: let indice = productos.indexOf('iPhone')");
+            mostrarResultado("  □ Alertas stock bajo: if (stock[i] < 5) { ... }");
+            mostrarResultado("  □ Lista agotados: if (stock[i] === 0) { ... }");
+            mostrarResultado("  □ Contador productos en riesgo");
+            mostrarResultado("");
+            mostrarResultado("💡 EJEMPLO de alerta:");
+            mostrarResultado("   ⚠️ STOCK BAJO: Samsung Galaxy (3 unidades)");
+            mostrarResultado("   🚫 AGOTADO: AirPods (0 unidades)");
+            mostrarResultado("");
+            mostrarResultado("🔍 Verifica las alertas en la CONSOLA (F12)");
+        }
+
+        function testDesafio4() {
+            limpiarResultado();
+            mostrarResultado("=== 📊 VERIFICANDO DESAFÍO 4: Análisis de Rentabilidad ===");
+            mostrarResultado("");
+            mostrarResultado("🔍 Tu análisis debería incluir:");
+            mostrarResultado("  □ Array costos: [70000, 55000, 50000, ...]");
+            mostrarResultado("  □ Cálculo ganancia: ganancia[i] = precios[i] - costos[i]");
+            mostrarResultado("  □ Identificar más/menos rentable");
+            mostrarResultado("  □ Margen promedio: (suma ganancias / suma precios) * 100");
+            mostrarResultado("");
+            mostrarResultado("💡 ESCENARIOS de simulación:");
+            mostrarResultado("   • Precios +10%: nuevoPrecio[i] = precios[i] * 1.1");
+            mostrarResultado("   • Costos -5%: nuevoCosto[i] = costos[i] * 0.95");
+            mostrarResultado("   • Comparar ganancias antes/después");
+            mostrarResultado("");
+            mostrarResultado("🎉 ¡SISTEMA COMPLETO!");
+            mostrarResultado("Has creado un sistema profesional que incluye:");
+            mostrarResultado("   ✓ Gestión completa de inventario");
+            mostrarResultado("   ✓ Simulación realista de ventas");
+            mostrarResultado("   ✓ Sistema de alertas automáticas");
+            mostrarResultado("   ✓ Análisis financiero avanzado");
+            mostrarResultado("   ✓ Múltiples arrays coordinados");
+            mostrarResultado("   ✓ For loops complejos y anidados");
+            mostrarResultado("   ✓ Lógica de negocio real");
+        }
+    </script>
+</body>
+</html>
