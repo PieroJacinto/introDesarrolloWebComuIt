@@ -4,311 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 1: Condicionales - Clase 6</title>
-    <style>
-        /* ===== ESTILOS BASE (CONSISTENTES CON OTRAS CLASES) ===== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 2rem;
-        }
-
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 3rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ===== HEADER ===== */
-        .header {
-            text-align: center;
-            margin-bottom: 3rem;
-            padding-bottom: 2rem;
-            border-bottom: 3px solid #667eea;
-        }
-
-        .header h1 {
-            font-size: 2.5rem;
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-weight: 700;
-        }
-
-        .header p {
-            font-size: 1.2rem;
-            color: #666;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* ===== EJERCICIOS ===== */
-        .ejercicio {
-            margin-bottom: 3rem;
-            padding: 2rem;
-            background: rgba(102, 126, 234, 0.05);
-            border-radius: 15px;
-            border-left: 5px solid #667eea;
-        }
-
-        .ejercicio h2 {
-            color: #667eea;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .ejercicio h3 {
-            color: #764ba2;
-            font-size: 1.4rem;
-            margin: 1.5rem 0 1rem 0;
-        }
-
-        /* ===== INSTRUCCIONES ===== */
-        .instrucciones {
-            background: rgba(16, 185, 129, 0.1);
-            border: 2px solid #10b981;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .objetivo {
-            background: rgba(59, 130, 246, 0.1);
-            border: 2px solid #3b82f6;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .tiempo {
-            background: rgba(245, 158, 11, 0.1);
-            border: 2px solid #f59e0b;
-            border-radius: 10px;
-            padding: 1rem;
-            margin: 1rem 0;
-            text-align: center;
-            font-weight: 600;
-        }
-
-        /* ===== CÓDIGO CON TODOS ===== */
-        .code-todo {
-            background: #2d3748;
-            color: #e2e8f0;
-            padding: 1.5rem;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin: 1rem 0;
-            overflow-x: auto;
-            border: 2px solid #4a5568;
-            white-space: pre-line;
-            position: relative;
-        }
-
-        .todo {
-            background: #f59e0b;
-            color: #1a202c;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.85rem;
-        }
-
-        /* ===== CONSOLA DE PRUEBA ===== */
-        .test-area {
-            background: #f8f9fa;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-        }
-
-        .console-output {
-            background: #1a202c;
-            color: #68d391;
-            padding: 1.5rem;
-            border-radius: 10px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9rem;
-            margin: 1rem 0;
-            white-space: pre-line;
-            border: 2px solid #2d3748;
-            min-height: 150px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        /* ===== BOTONES Y CONTROLES ===== */
-        .controls {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            margin: 1rem 0;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(102, 126, 234, 0.3);
-        }
-
-        .input-group {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .input-group label {
-            font-weight: 600;
-            color: #667eea;
-            min-width: 80px;
-        }
-
-        .input-group input, .input-group select {
-            padding: 8px 12px;
-            border: 2px solid #e2e8f0;
-            border-radius: 6px;
-            font-size: 0.9rem;
-        }
-
-        .input-group input:focus, .input-group select:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        /* ===== TIPS Y AYUDA ===== */
-        .tip {
-            background: rgba(168, 85, 247, 0.1);
-            border: 2px solid #a855f7;
-            border-radius: 10px;
-            padding: 1rem;
-            margin: 1rem 0;
-        }
-
-        .tip h4 {
-            color: #a855f7;
-            margin-bottom: 0.5rem;
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            body {
-                padding: 1rem;
-            }
-            
-            .container {
-                padding: 1.5rem;
-            }
-            
-            .header h1 {
-                font-size: 2rem;
-            }
-            
-            .controls {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .input-group {
-                width: 100%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="./ejercicio_1_condicionales.css">
 </head>
 <body>
     <div class="container">
         <!-- HEADER -->
         <div class="header">
             <h1>📝 EJERCICIO 1: Condicionales</h1>
-            <p>Practica if/else, operadores de comparación y lógicos con ejercicios progresivos</p>
+            <p>Completa los TODOs para practicar if/else, operadores y switch statements</p>
+        </div>
+
+        <!-- INSTRUCCIONES GENERALES -->
+        <div class="console-tip">
+            🖥️ Abre la consola (F12) y completa los TODOs. Recarga para ver los resultados.
         </div>
 
         <!-- EJERCICIO 1: IF/ELSE BÁSICO -->
         <div class="ejercicio">
-            <h2>🚦 Ejercicio 1: Sistema de Acceso por Edad</h2>
+            <h2>🚦 Ejercicio 1: Verificar Edad</h2>
             
             <div class="objetivo">
                 <h3>🎯 OBJETIVO:</h3>
-                <p>Crear un sistema que verifique si una persona puede acceder a diferentes áreas según su edad.</p>
+                <p>Crear un programa que verifique si una persona es mayor de edad usando if/else.</p>
             </div>
 
-            <div class="tiempo">⏰ TIEMPO ESTIMADO: 10 minutos</div>
+            <div class="tiempo">⏰ TIEMPO: 8 minutos</div>
 
-            <div class="instrucciones">
-                <h3>📋 INSTRUCCIONES:</h3>
-                <p><strong>1.</strong> Completa los TODOs en el código</p>
-                <p><strong>2.</strong> Usa if/else para crear las condiciones</p>
-                <p><strong>3.</strong> Prueba con diferentes edades</p>
-                <p><strong>4.</strong> Verifica que funcione correctamente</p>
-            </div>
+            <div class="code-todo">// Ejercicio 1: Verificar edad
+let edad = 17;
 
-            <div class="code-todo">// 🚦 Sistema de acceso por edad
-let edad = 16; // <span class="todo">TODO: Cambiar por diferentes valores para probar</span>
+// <span class="todo">TODO: Escribir if/else para verificar si edad >= 18</span>
 
-console.log(`=== VERIFICANDO ACCESO PARA EDAD: ${edad} ===`);
-
-// <span class="todo">TODO: Completar las condiciones</span>
-if (edad /* TODO: Condición para mayor de edad */) {
-    console.log("✅ Acceso completo permitido");
-    console.log("Puedes entrar a todas las áreas");
-} else if (edad /* TODO: Condición para adolescentes (13-17) */) {
-    console.log("⚠️ Acceso limitado");
-    console.log("Puedes entrar con supervisión de un adulto");
-} else {
-    console.log("❌ Acceso denegado");
-    console.log("Debes estar acompañado de un padre o tutor");
-}
-
-// <span class="todo">TODO: Agregar un mensaje final</span>
-console.log(/* TODO: Mensaje con template literal usando la edad */);</div>
-
-            <div class="test-area">
-                <h3>🧪 Área de Prueba:</h3>
-                <div class="controls">
-                    <div class="input-group">
-                        <label>Edad:</label>
-                        <input type="number" id="edad1" value="16" min="0" max="120">
-                    </div>
-                    <button class="btn" onclick="probarEjercicio1()">🚦 Probar</button>
-                </div>
-                <div class="console-output" id="console1">Ingresa una edad y presiona "Probar" para ver el resultado...</div>
-            </div>
-
-            <div class="tip">
-                <h4>💡 Ayuda:</h4>
-                <p>• Para mayor de edad: <code>edad &gt;= 18</code></p>
-                <p>• Para adolescentes: <code>edad &gt;= 13 && edad &lt; 18</code></p>
-                <p>• Template literal: <code>`Texto ${variable} más texto`</code></p>
-            </div>
+// <span class="todo">TODO: Mostrar mensaje con template literal incluyendo la edad</span></div>
         </div>
 
         <!-- EJERCICIO 2: OPERADORES LÓGICOS -->
@@ -317,196 +44,41 @@ console.log(/* TODO: Mensaje con template literal usando la edad */);</div>
             
             <div class="objetivo">
                 <h3>🎯 OBJETIVO:</h3>
-                <p>Crear un sistema de login que verifique usuario Y contraseña, o permita acceso VIP.</p>
+                <p>Crear un sistema que verifique usuario Y contraseña, O permita acceso VIP.</p>
             </div>
 
-            <div class="tiempo">⏰ TIEMPO ESTIMADO: 15 minutos</div>
+            <div class="tiempo">⏰ TIEMPO: 10 minutos</div>
 
-            <div class="instrucciones">
-                <h3>📋 INSTRUCCIONES:</h3>
-                <p><strong>1.</strong> Usa operadores lógicos (&& , ||, !)</p>
-                <p><strong>2.</strong> Combina múltiples condiciones</p>
-                <p><strong>3.</strong> Prueba con diferentes combinaciones</p>
-                <p><strong>4.</strong> Asegúrate que la lógica sea correcta</p>
-            </div>
-
-            <div class="code-todo">// 🔐 Sistema de login
+            <div class="code-todo">// Ejercicio 2: Sistema de login
 let usuario = "admin";
 let contraseña = "1234";
 let esVIP = false;
-let intentosFallidos = 0;
 
-console.log("=== SISTEMA DE LOGIN ===");
-
-// <span class="todo">TODO: Verificar si está bloqueado (más de 3 intentos)</span>
-if (intentosFallidos /* TODO: Condición de bloqueo */) {
-    console.log("🚫 Cuenta bloqueada por demasiados intentos fallidos");
-} 
-// <span class="todo">TODO: Verificar acceso VIP (sin contraseña)</span>
-else if (/* TODO: Condición para VIP */) {
-    console.log("👑 Acceso VIP concedido");
-    console.log("Bienvenido, usuario premium");
-}
-// <span class="todo">TODO: Verificar usuario Y contraseña correctos</span>
-else if (/* TODO: Condiciones de usuario y contraseña */) {
-    console.log("✅ Login exitoso");
-    console.log(`Bienvenido, ${usuario}`);
-}
-// <span class="todo">TODO: Casos de error</span>
-else {
-    console.log("❌ Credenciales incorrectas");
-    // <span class="todo">TODO: Incrementar intentos fallidos</span>
-    
-    // <span class="todo">TODO: Mostrar mensaje específico según el error</span>
-    if (/* TODO: Solo el usuario está mal */) {
-        console.log("Usuario incorrecto");
-    } else if (/* TODO: Solo la contraseña está mal */) {
-        console.log("Contraseña incorrecta");
-    } else {
-        console.log("Usuario y contraseña incorrectos");
-    }
-}</div>
-
-            <div class="test-area">
-                <h3>🧪 Área de Prueba:</h3>
-                <div class="controls">
-                    <div class="input-group">
-                        <label>Usuario:</label>
-                        <input type="text" id="usuario2" value="admin">
-                    </div>
-                    <div class="input-group">
-                        <label>Contraseña:</label>
-                        <input type="text" id="contraseña2" value="1234">
-                    </div>
-                    <div class="input-group">
-                        <label>¿Es VIP?</label>
-                        <select id="esVIP2">
-                            <option value="false">No</option>
-                            <option value="true">Sí</option>
-                        </select>
-                    </div>
-                    <div class="input-group">
-                        <label>Intentos:</label>
-                        <input type="number" id="intentos2" value="0" min="0" max="10">
-                    </div>
-                    <button class="btn" onclick="probarEjercicio2()">🔐 Probar Login</button>
-                </div>
-                <div class="console-output" id="console2">Configura los valores y presiona "Probar Login" para ver el resultado...</div>
-            </div>
-
-            <div class="tip">
-                <h4>💡 Ayuda:</h4>
-                <p>• AND: <code>condicion1 && condicion2</code> (ambas deben ser true)</p>
-                <p>• OR: <code>condicion1 || condicion2</code> (al menos una debe ser true)</p>
-                <p>• Usuarios válidos: "admin", "user", "guest"</p>
-                <p>• Contraseñas válidas: "1234", "password", "123"</p>
-            </div>
+// <span class="todo">TODO: Escribir if/else usando && y || para verificar acceso</span>
+// Debe permitir acceso si: (usuario correcto Y contraseña correcta) O es VIP</div>
         </div>
 
-        <!-- EJERCICIO 3: SWITCH STATEMENT -->
+        <!-- EJERCICIO 3: SWITCH -->
         <div class="ejercicio">
-            <h2>🎮 Ejercicio 3: Sistema de Calificaciones</h2>
+            <h2>🎮 Ejercicio 3: Calificaciones</h2>
             
             <div class="objetivo">
                 <h3>🎯 OBJETIVO:</h3>
-                <p>Convertir puntuaciones numéricas a letras usando switch y mostrar mensajes personalizados.</p>
+                <p>Usar switch para mostrar mensajes según la puntuación exacta.</p>
             </div>
 
-            <div class="tiempo">⏰ TIEMPO ESTIMADO: 12 minutos</div>
+            <div class="tiempo">⏰ TIEMPO: 10 minutos</div>
 
-            <div class="instrucciones">
-                <h3>📋 INSTRUCCIONES:</h3>
-                <p><strong>1.</strong> Usa switch para convertir rangos a letras</p>
-                <p><strong>2.</strong> Agrega mensajes motivacionales</p>
-                <p><strong>3.</strong> Maneja casos especiales</p>
-                <p><strong>4.</strong> No olvides los breaks</p>
-            </div>
-
-            <div class="code-todo">// 🎮 Sistema de calificaciones
+            <div class="code-todo">// Ejercicio 3: Sistema de calificaciones
 let puntuacion = 85;
-let estudiante = "María";
 
-console.log(`=== CALIFICACIÓN PARA ${estudiante} ===`);
-console.log(`Puntuación: ${puntuacion}/100`);
-
-// <span class="todo">TODO: Determinar la letra de calificación</span>
-let letra;
-// <span class="todo">TODO: Usar Math.floor(puntuacion / 10) para switch</span>
-switch (/* TODO: Expresión que convierte puntuación a rango */) {
-    case 10:
-    case 9:
-        letra = "A";
-        console.log("🏆 ¡Excelente trabajo!");
-        // <span class="todo">TODO: Agregar break</span>
-        
-    case 8:
-        letra = "B";
-        console.log("👍 ¡Muy bien!");
-        // <span class="todo">TODO: Agregar break</span>
-        
-    case 7:
-        letra = "C";
-        console.log("📚 Buen trabajo");
-        // <span class="todo">TODO: Agregar break</span>
-        
-    case 6:
-        letra = "D";
-        console.log("⚠️ Suficiente, pero puedes mejorar");
-        // <span class="todo">TODO: Agregar break</span>
-        
-    default:
-        letra = "F";
-        console.log("❗ Necesitas estudiar más");
-}
-
-console.log(`Calificación final: ${letra}`);
-
-// <span class="todo">TODO: Agregar lógica adicional con if</span>
-if (puntuacion === 100) {
-    console.log("🎯 ¡Puntuación perfecta!");
-} else if (/* TODO: Condición para puntuación muy baja */) {
-    console.log("💪 No te rindas, la práctica hace al maestro");
-}
-
-// <span class="todo">TODO: Mensaje personalizado según la letra</span>
-switch (letra) {
-    case "A":
-        console.log("🌟 Eres un estudiante ejemplar");
-        break;
-    // <span class="todo">TODO: Completar otros casos</span>
-    case "B":
-        // TODO: Mensaje para B
-        break;
-    case "C":
-        // TODO: Mensaje para C
-        break;
-    default:
-        console.log("📖 Recuerda: el esfuerzo siempre vale la pena");
-}</div>
-
-            <div class="test-area">
-                <h3>🧪 Área de Prueba:</h3>
-                <div class="controls">
-                    <div class="input-group">
-                        <label>Estudiante:</label>
-                        <input type="text" id="estudiante3" value="María">
-                    </div>
-                    <div class="input-group">
-                        <label>Puntuación:</label>
-                        <input type="number" id="puntuacion3" value="85" min="0" max="100">
-                    </div>
-                    <button class="btn" onclick="probarEjercicio3()">🎮 Calcular Nota</button>
-                </div>
-                <div class="console-output" id="console3">Ingresa una puntuación y presiona "Calcular Nota" para ver el resultado...</div>
-            </div>
-
-            <div class="tip">
-                <h4>💡 Ayuda:</h4>
-                <p>• <code>Math.floor(puntuacion / 10)</code> convierte 85 → 8</p>
-                <p>• Rangos: 90-100=A, 80-89=B, 70-79=C, 60-69=D, 0-59=F</p>
-                <p>• Case 10 y case 9 juntos para puntuaciones 90-100</p>
-                <p>• ¡No olvides los breaks!</p>
-            </div>
+// <span class="todo">TODO: Crear switch con estos casos:</span>
+// case 100: "¡Perfecto! Puntuación máxima"
+// case 90: "Excelente trabajo"
+// case 80: "Muy bien"
+// case 70: "Bien, sigue así"
+// case 60: "Suficiente"
+// default: "Necesitas mejorar"</div>
         </div>
 
         <!-- EJERCICIO 4: OPERADOR TERNARIO -->
@@ -515,176 +87,63 @@ switch (letra) {
             
             <div class="objetivo">
                 <h3>🎯 OBJETIVO:</h3>
-                <p>Usar operadores ternarios para crear mensajes dinámicos de forma concisa.</p>
+                <p>Usar operadores ternarios para crear mensajes según condiciones.</p>
             </div>
 
-            <div class="tiempo">⏰ TIEMPO ESTIMADO: 8 minutos</div>
+            <div class="tiempo">⏰ TIEMPO: 8 minutos</div>
 
-            <div class="instrucciones">
-                <h3>📋 INSTRUCCIONES:</h3>
-                <p><strong>1.</strong> Convierte if/else simples a ternarios</p>
-                <p><strong>2.</strong> Usa ternarios para asignar valores</p>
-                <p><strong>3.</strong> Mantén los ternarios simples y legibles</p>
-                <p><strong>4.</strong> Compara ambas sintaxis</p>
-            </div>
-
-            <div class="code-todo">// ❓ Mensajes dinámicos con operador ternario
+            <div class="code-todo">// Ejercicio 4: Operador ternario
+let precio = 150;
 let hora = 14;
-let temperatura = 22;
-let llueve = false;
 
-console.log("=== MENSAJES DINÁMICOS ===");
+// <span class="todo">TODO: Crear variable 'descuento' usando ternario</span>
+// Si precio > 100, descuento = 10, sino = 0
 
-// <span class="todo">TODO: Saludo según la hora (ternario simple)</span>
-let saludo = hora /* TODO: Condición */ ? /* TODO: valor si true */ : /* TODO: valor si false */;
-console.log(saludo);
-
-// <span class="todo">TODO: Temperatura (ternario simple)</span>
-let climaTexto = temperatura /* TODO: Condición para calor */ ? "hace calor" : "está fresco";
-console.log(`Hoy ${climaTexto} (${temperatura}°C)`);
-
-// <span class="todo">TODO: Recomendación de ropa (ternario anidado)</span>
-let ropa = temperatura &gt; 25 ? "remera" : 
-           temperatura &gt; 15 ? /* TODO: Ropa para clima templado */ : 
-           /* TODO: Ropa para clima frío */;
-console.log(`Recomendación: usar ${ropa}`);
-
-// <span class="todo">TODO: Actividad recomendada (combinando condiciones)</span>
-let actividad = llueve ? "quedarse en casa" : 
-                temperatura &gt; 20 ? /* TODO: Actividad para buen clima */ : 
-                /* TODO: Actividad para clima fresco */;
-console.log(`Actividad recomendada: ${actividad}`);
-
-// <span class="todo">TODO: Emoji del clima (ternarios múltiples)</span>
-let emoji = llueve ? "🌧️" : 
-            temperatura &gt; 30 ? /* TODO: Emoji para calor */ :
-            temperatura &gt; 20 ? /* TODO: Emoji para clima agradable */ :
-            /* TODO: Emoji para frío */;
-
-console.log(`Estado del clima: ${emoji}`);
-
-// <span class="todo">TODO: Mensaje completo combinando todo</span>
-let mensaje = `${saludo} Hoy ${climaTexto} ${emoji}. Te recomiendo ${ropa} y ${actividad}.`;
-console.log(`\n📝 Mensaje completo: ${mensaje}`);</div>
-
-            <div class="test-area">
-                <h3>🧪 Área de Prueba:</h3>
-                <div class="controls">
-                    <div class="input-group">
-                        <label>Hora:</label>
-                        <input type="number" id="hora4" value="14" min="0" max="23">
-                    </div>
-                    <div class="input-group">
-                        <label>Temperatura:</label>
-                        <input type="number" id="temperatura4" value="22" min="-10" max="50">
-                    </div>
-                    <div class="input-group">
-                        <label>¿Llueve?</label>
-                        <select id="llueve4">
-                            <option value="false">No</option>
-                            <option value="true">Sí</option>
-                        </select>
-                    </div>
-                    <button class="btn" onclick="probarEjercicio4()">❓ Generar Mensaje</button>
-                </div>
-                <div class="console-output" id="console4">Configura los valores y presiona "Generar Mensaje" para ver el resultado...</div>
-            </div>
-
-            <div class="tip">
-                <h4>💡 Ayuda:</h4>
-                <p>• Sintaxis: <code>condicion ? valorSiTrue : valorSiFalse</code></p>
-                <p>• Para ternarios anidados: usa paréntesis para claridad</p>
-                <p>• Horarios: mañana &lt;12, tarde &lt;18, noche ≥18</p>
-                <p>• Si es muy complejo, mejor usa if/else</p>
-            </div>
+// <span class="todo">TODO: Crear variable 'saludo' con ternario anidado</span>
+// Mañana (hora < 12), tarde (hora < 18), noche</div>
+        </div>
         </div>
 
-        <!-- RESUMEN FINAL -->
-        <div class="objetivo">
-            <h3>🎯 RESUMEN DE LO PRACTICADO:</h3>
-            <p>✅ <strong>If/else básico</strong> - Tomar decisiones simples<br>
-            ✅ <strong>Operadores lógicos</strong> - Combinar condiciones (&& || !)<br>
-            ✅ <strong>Switch statement</strong> - Múltiples opciones específicas<br>
-            ✅ <strong>Operador ternario</strong> - If/else en una línea<br>
-            ✅ <strong>Template literals</strong> - Strings dinámicos con ${}</p>
-        </div>
-
+        <!-- TIPS FINALES -->
         <div class="tip">
-            <h4>🚀 Próximo paso: FUNCIONES</h4>
-            <p>En el siguiente ejemplo aprenderás a organizar este código en funciones reutilizables que pueden recibir parámetros y devolver valores.</p>
+            <h4>💡 Recordatorio de Sintaxis:</h4>
+            <p>• <strong>If/else:</strong> <code>if (condicion) { } else { }</code></p>
+            <p>• <strong>AND:</strong> <code>condicion1 && condicion2</code></p>
+            <p>• <strong>OR:</strong> <code>condicion1 || condicion2</code></p>
+            <p>• <strong>Ternario:</strong> <code>condicion ? siTrue : siFalse</code></p>
+            <p>• <strong>Switch:</strong> No olvides los <code>break;</code></p>
+        </div>
+
+        <div class="objetivo">
+            <h3>✅ ¿Terminaste? Experimenta cambiando los valores de las variables!</h3>
         </div>
     </div>
 
     <script>
-        // ===== FUNCIONES PARA PROBAR LOS EJERCICIOS =====
+        // INSTRUCCIONES PARA EL ESTUDIANTE:
         
-        function escribirConsola(elementId, texto) {
-            document.getElementById(elementId).textContent = texto;
-        }
-
-        // Ejercicio 1: Sistema de acceso por edad
-        function probarEjercicio1() {
-            const edad = parseInt(document.getElementById('edad1').value);
-            let resultado = `=== VERIFICANDO ACCESO PARA EDAD: ${edad} ===\n\n`;
-            
-            if (edad >= 18) {
-                resultado += "✅ Acceso completo permitido\n";
-                resultado += "Puedes entrar a todas las áreas\n";
-            } else if (edad >= 13 && edad < 18) {
-                resultado += "⚠️ Acceso limitado\n";
-                resultado += "Puedes entrar con supervisión de un adulto\n";
-            } else {
-                resultado += "❌ Acceso denegado\n";
-                resultado += "Debes estar acompañado de un padre o tutor\n";
-            }
-            
-            resultado += `\n📝 Verificación completada para edad: ${edad} años`;
-            
-            escribirConsola('console1', resultado);
-        }
-
-        // Ejercicio 2: Sistema de login
-        function probarEjercicio2() {
-            const usuario = document.getElementById('usuario2').value;
-            const contraseña = document.getElementById('contraseña2').value;
-            const esVIP = document.getElementById('esVIP2').value === 'true';
-            const intentos = parseInt(document.getElementById('intentos2').value);
-            
-            let resultado = "=== SISTEMA DE LOGIN ===\n\n";
-            
-            const usuariosValidos = ["admin", "user", "guest"];
-            const contraseñasValidas = ["1234", "password", "123"];
-            
-            if (intentos > 3) {
-                resultado += "🚫 Cuenta bloqueada por demasiados intentos fallidos\n";
-            } else if (esVIP) {
-                resultado += "👑 Acceso VIP concedido\n";
-                resultado += "Bienvenido, usuario premium\n";
-            } else if (usuariosValidos.includes(usuario) && contraseñasValidas.includes(contraseña)) {
-                resultado += "✅ Login exitoso\n";
-                resultado += `Bienvenido, ${usuario}\n`;
-            } else {
-                resultado += "❌ Credenciales incorrectas\n";
-                
-                if (!usuariosValidos.includes(usuario) && !contraseñasValidas.includes(contraseña)) {
-                    resultado += "Usuario y contraseña incorrectos\n";
-                } else if (!usuariosValidos.includes(usuario)) {
-                    resultado += "Usuario incorrecto\n";
-                } else if (!contraseñasValidas.includes(contraseña)) {
-                    resultado += "Contraseña incorrecta\n";
-                }
-            }
-            
-            escribirConsola('console2', resultado);
-        }
-
-        // Ejercicio 3: Sistema de calificaciones
-        function probarEjercicio3() {
-            const estudiante = document.getElementById('estudiante3').value;
-            const puntuacion = parseInt(document.getElementById('puntuacion3').value);
-            
-            let resultado = `=== CALIFICACIÓN PARA ${estudiante} ===\n`;
-            resultado += `Puntuación: ${puntuacion}/100\n\n`;
-            
-            let letra;
-            
+        /* 
+        🎯 OBJETIVO: Completar todos los TODOs para practicar condicionales
+        
+        📋 PASOS:
+        1. Abre la consola del navegador (F12)
+        2. Ve a la pestaña "Console"
+        3. Completa cada TODO en orden
+        4. Guarda el archivo (Ctrl+S)
+        5. Recarga la página (F5) para ver los resultados
+        6. Experimenta cambiando los valores de las variables
+        
+        ⏰ TIEMPO TOTAL ESTIMADO: 25 minutos
+        
+        💡 AYUDA:
+        - edad >= 18 para mayor de edad
+        - usuario === "admin" && contraseña === "1234" para login
+        - Math.floor(puntuacion / 10) convierte 85 en 8
+        - No olvides los break en switch
+        
+        🎉 AL TERMINAR:
+        Deberías ver mensajes sobre edad, login, calificaciones y saludos
+        */
+    </script>
+</body>
+</html>
