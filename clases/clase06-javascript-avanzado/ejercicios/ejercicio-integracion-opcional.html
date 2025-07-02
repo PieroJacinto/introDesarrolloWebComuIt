@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Integración - Clase 6</title>
+    <style>
+        /* ===== ESTILOS BASE (CONSISTENTES CON OTRAS CLASES) ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* ===== EJERCICIOS ===== */
+        .ejercicio {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: rgba(102, 126, 234, 0.05);
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .ejercicio h2 {
+            color: #667eea;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ===== INSTRUCCIONES ===== */
+        .instrucciones {
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .objetivo {
+            background: rgba(59, 130, 246, 0.1);
+            border: 2px solid #3b82f6;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .tiempo {
+            background: rgba(245, 158, 11, 0.1);
+            border: 2px solid #f59e0b;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        /* ===== CÓDIGO CON TODOS ===== */
+        .code-todo {
+            background: #2d3748;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 1rem 0;
+            overflow-x: auto;
+            border: 2px solid #4a5568;
+            white-space: pre;
+        }
+
+        .todo {
+            background: #f59e0b;
+            color: #1a202c;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.85rem;
+        }
+
+        /* ===== TIPS Y AYUDA ===== */
+        .tip {
+            background: rgba(168, 85, 247, 0.1);
+            border: 2px solid #a855f7;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .tip h4 {
+            color: #a855f7;
+            margin-bottom: 0.5rem;
+        }
+
+        .console-tip {
+            background: rgba(104, 211, 145, 0.1);
+            border: 2px solid #68d391;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 1rem 0;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .success-box {
+            background: rgba(34, 197, 94, 0.1);
+            border: 2px solid #22c55e;
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            .container {
+                padding: 1.5rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🎯 EJERCICIO 3: INTEGRACIÓN</h1>
+            <p>Combina todos los conceptos de la Clase 6 en un sistema simple de gestión de contenido</p>
+        </div>
+
+        <!-- INSTRUCCIONES GENERALES -->
+        <div class="instrucciones">
+            <h3>📋 INSTRUCCIONES</h3>
+            <p><strong>🎯 OBJETIVO:</strong> Crear un sistema básico que use todos los conceptos de la clase.</p>
+            <p><strong>📝 TEMA:</strong> Gestión de elementos (artículos, productos, proyectos, etc.)</p>
+            <ul>
+                <li>✅ <strong>Condicionales:</strong> if/else para validaciones</li>
+                <li>✅ <strong>Funciones:</strong> Organizar código</li>
+                <li>✅ <strong>Loops:</strong> while y for...of</li>
+                <li>✅ <strong>JSON:</strong> Convertir datos</li>
+                <li>✅ <strong>Callbacks:</strong> forEach, map, filter</li>
+            </ul>
+        </div>
+
+        <div class="tiempo">⏰ TIEMPO TOTAL: 30 minutos</div>
+
+        <div class="console-tip">
+            💡 Abre la consola del navegador (F12) para ver los resultados
+        </div>
+
+        <!-- PARTE 1: DATOS Y FUNCIONES -->
+        <div class="ejercicio">
+            <h2>🏗️ Parte 1: Datos y Funciones Básicas</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Crear datos y funciones que usaremos en todo el ejercicio.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 10 minutos</div>
+
+            <div class="code-todo">// PARTE 1: Datos y funciones básicas
+// <span class="todo">TODO: Crear array de elementos (mínimo 4)</span>
+let elementos = [
+    { nombre: "Elemento 1", categoria: "A", precio: 100, disponible: true },
+    { nombre: "Elemento 2", categoria: "B", precio: 50, disponible: false },
+    // Agregar 2 más con datos similares
+];
+
+// <span class="todo">TODO: Crear función 'validarElemento' que reciba un elemento</span>
+// Debe verificar que tenga nombre y precio > 0
+// Devolver true o false
+
+// <span class="todo">TODO: Crear función 'clasificarPrecio' que reciba un precio</span>
+// Devolver: "Barato" (< 50), "Medio" (50-100), "Caro" (> 100)
+
+// <span class="todo">TODO: Probar las funciones con algunos elementos</span></div>
+        </div>
+
+        <!-- PARTE 2: CONDICIONALES Y LOOPS -->
+        <div class="ejercicio">
+            <h2>🔄 Parte 2: Análisis con Loops</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Usar condicionales, while y for...of para analizar los datos.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 12 minutos</div>
+
+            <div class="code-todo">// PARTE 2: Condicionales y loops
+// <span class="todo">TODO: Usar while para encontrar el primer elemento disponible</span>
+let indice = 0;
+let encontrado = false;
+// Buscar hasta encontrar elemento.disponible === true
+
+// <span class="todo">TODO: Usar for...of para contar por categoría</span>
+let contadorA = 0;
+let contadorB = 0;
+// Recorrer elementos y contar cada categoría
+
+// <span class="todo">TODO: Crear función 'generarReporte' con condicionales</span>
+function generarReporte(elementosArray) {
+    let total = elementosArray.length;
+    let disponibles = 0;
+    
+    // Contar disponibles con for...of
+    // Usar if para determinar estado general del inventario
+    // Si > 50% disponible: "Buen stock"
+    // Si 20-50%: "Stock medio"  
+    // Si < 20%: "Stock bajo"
+}
+
+// <span class="todo">TODO: Llamar generarReporte y mostrar resultado</span></div>
+        </div>
+
+        <!-- PARTE 3: JSON Y CALLBACKS -->
+        <div class="ejercicio">
+            <h2>📄 Parte 3: JSON y Procesamiento</h2>
+            
+            <div class="objetivo">
+                <h3>🎯 OBJETIVO:</h3>
+                <p>Usar JSON para exportar datos y callbacks para procesarlos.</p>
+            </div>
+
+            <div class="tiempo">⏰ TIEMPO: 8 minutos</div>
+
+            <div class="code-todo">// PARTE 3: JSON y callbacks
+// <span class="todo">TODO: Crear función 'exportarDatos' que genere JSON</span>
+function exportarDatos() {
+    let datos = {
+        elementos: elementos,
+        fecha: new Date().toISOString(),
+        total: elementos.length
+    };
+    
+    // Convertir a JSON y mostrar
+    // Devolver el string JSON
+}
+
+// <span class="todo">TODO: Usar forEach para mostrar resumen de cada elemento</span>
+elementos.forEach(function(elemento) {
+    // Mostrar: "[nombre] - [categoria] - [clasificación de precio] - [disponible]"
+});
+
+// <span class="todo">TODO: Usar map para crear versión simplificada</span>
+let resumen = elementos.map(function(elemento) {
+    return {
+        nombre: elemento.nombre,
+        estado: elemento.disponible ? "Disponible" : "Agotado"
+    };
+});
+
+// <span class="todo">TODO: Usar filter para mostrar solo disponibles</span>
+let disponibles = elementos.filter(function(elemento) {
+    return elemento.disponible === true;
+});
+
+console.log("Elementos disponibles:", disponibles.length);</div>
+        </div>
+
+        <!-- VERIFICACIÓN FINAL -->
+        <div class="success-box">
+            <h3>✅ VERIFICACIÓN FINAL</h3>
+            <p><strong>Si completaste todo, deberías ver en la consola:</strong></p>
+            <ul>
+                <li>🔍 Validaciones de elementos funcionando</li>
+                <li>📊 Contadores por categoría</li>
+                <li>📝 Reporte de estado del inventario</li>
+                <li>📄 Datos exportados en JSON</li>
+                <li>🎯 Resumen de elementos con forEach</li>
+                <li>📋 Lista de elementos disponibles</li>
+            </ul>
+        </div>
+
+        <!-- TIPS -->
+        <div class="tip">
+            <h4>💡 Tips:</h4>
+            <p>• <strong>Paso a paso:</strong> Completa cada TODO antes del siguiente</p>
+            <p>• <strong>Console.log:</strong> Úsalo para verificar resultados</p>
+            <p>• <strong>Guarda y recarga:</strong> Para ver los cambios</p>
+            <p>• <strong>Personaliza:</strong> Cambia los datos por los de tu proyecto</p>
+        </div>
+
+        <div class="console-tip">
+            🎉 Al terminar, habrás usado TODOS los conceptos de la Clase 6 de forma práctica
+        </div>
+    </div>
+
+    <script>
+        // INSTRUCCIONES PARA EL ESTUDIANTE:
+        
+        /* 
+        🎯 OBJETIVO: Practicar todos los conceptos de la Clase 6 de forma integrada
+        
+        📋 METODOLOGÍA:
+        1. Completa cada TODO en orden
+        2. Prueba con console.log frecuentemente
+        3. Adapta los datos a tu tipo de proyecto
+        
+        💡 ADAPTACIÓN POR PROYECTO:
+        - Portfolio: elementos = proyectos/skills
+        - Blog: elementos = artículos/categorías  
+        - Restaurante: elementos = platos/menús
+        - Tienda: elementos = productos/servicios
+        
+        🏆 AL COMPLETAR:
+        Tendrás un sistema básico pero completo que usa:
+        - Validaciones con condicionales
+        - Organización con funciones
+        - Análisis con loops
+        - Intercambio con JSON
+        - Procesamiento con callbacks
+        
+        ¡Es la base de cualquier aplicación web real!
+        */
+    </script>
+</body>
+</html>
