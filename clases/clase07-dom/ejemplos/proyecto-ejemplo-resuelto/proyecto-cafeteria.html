@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafetería Luna - Proyecto Ejemplo Clase 7</title>
+    <link rel="stylesheet" href="./proyecto-cafeteria.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🌙 Proyecto Ejemplo Clase 7</h1>
+            <p>DOM + Import/Export + Template Strings</p>
+        </div>
+
+        <!-- INFORMACIÓN DE LA CAFETERÍA (se llena automáticamente) -->
+        <div class="section">
+            <div id="info-cafeteria">
+                <!-- Se llena con mostrarInfoCafeteria() al cargar la página -->
+            </div>
+        </div>
+
+        <!-- FORMULARIO DE BÚSQUEDA -->
+        <div class="section">
+            <h3>🔍 Buscar Productos</h3>
+            <form id="form-buscar" class="search-form">
+                <input 
+                    type="text" 
+                    id="input-buscar" 
+                    placeholder="Escribe el nombre del producto..."
+                    required
+                >
+                <button type="submit">Buscar</button>
+            </form>
+            
+            <!-- Aquí aparecen los resultados de búsqueda -->
+            <div id="resultado-busqueda">
+                <p>👆 Usa el formulario arriba para buscar productos</p>
+            </div>
+        </div>
+
+        <!-- MENÚ COMPLETO (se llena automáticamente) -->
+        <div class="section">
+            <div id="menu-container">
+                <!-- Se llena con mostrarMenuCompleto() al cargar la página -->
+            </div>
+        </div>
+
+        <!-- INFORMACIÓN PARA EL PROFESOR -->
+        <div class="section" style="background: #fef5e7; border-left-color: #ed8936;">
+            <h3>📋 Información para el Profesor</h3>
+            <p><strong>Archivos del proyecto:</strong></p>
+            <ul style="margin-left: 20px; color: #744210;">
+                <li><strong>datos.js</strong> - Solo datos (cafeteria, productos, equipo)</li>
+                <li><strong>funciones.js</strong> - Solo funciones que devuelven HTML</li>
+                <li><strong>dom.js</strong> - Solo DOM y eventos</li>
+                <li><strong>index.html</strong> - Estructura y estilos</li>
+            </ul>
+            <p><strong>Conceptos demostrados:</strong></p>
+            <ul style="margin-left: 20px; color: #744210;">
+                <li>✅ Import/export básico</li>
+                <li>✅ querySelector y innerHTML</li>
+                <li>✅ addEventListener (submit)</li>
+                <li>✅ event.preventDefault()</li>
+                <li>✅ Template strings</li>
+                <li>✅ forEach y condicionales</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- IMPORTANTE: type="module" para usar import/export -->
+    <script type="module" src="js/dom.js"></script>
+</body>
+</html>

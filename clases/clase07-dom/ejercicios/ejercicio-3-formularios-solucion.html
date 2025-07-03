@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Formularios - SOLUCIÓN - Clase 7</title>
+    <link rel="stylesheet" href="./ejercicio-3-formularios-solucion.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>✅ Ejercicio 3: Formularios - SOLUCIÓN</h1>
+            <p>Versión resuelta para el repositorio del profesor</p>
+        </div>
+
+        <!-- NOTAS PARA EL PROFESOR -->
+        <div class="profesor-nota">
+            <h3>📝 NOTAS PARA EL PROFESOR</h3>
+            <p><strong>⏰ Tiempo de resolución:</strong> 25-30 minutos</p>
+            <p><strong>🎯 Conceptos practicados:</strong> submit, preventDefault, validación, keyup en búsqueda</p>
+            <p><strong>💡 Puntos importantes a explicar:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Importancia crítica de event.preventDefault() en formularios</li>
+                <li>Diferencia entre 'submit' en formularios y 'keyup' en búsqueda</li>
+                <li>Validación antes de procesar datos</li>
+                <li>Uso de return para detener ejecución en validaciones</li>
+            </ul>
+        </div>
+
+        <!-- PARTE 1: FORMULARIO DE CONTACTO -->
+        <div class="ejercicio">
+            <h2>📧 Parte 1: Formulario de Contacto</h2>
+
+            <div class="formulario">
+                <form id="form-contacto">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" rows="4" required></textarea>
+                    </div>
+                    
+                    <button type="submit">📧 Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <div class="resultado" id="resultado-contacto">
+                Los datos del formulario aparecerán aquí
+            </div>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN PARTE 1:</h4>
+                <div class="code-solucion">const formContacto = document.querySelector('#form-contacto');
+formContacto.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const nombre = document.querySelector('#nombre').value;
+    const email = document.querySelector('#email').value;
+    const mensaje = document.querySelector('#mensaje').value;
+    
+    const resultado = document.querySelector('#resultado-contacto');
+    resultado.innerHTML = `
+        <h4>✅ Mensaje Enviado</h4>
+        <p><strong>Nombre:</strong> ${nombre}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Mensaje:</strong> ${mensaje}</p>
+    `;
+});</div>
+            </div>
+        </div>
+
+        <!-- PARTE 2: FORMULARIO CON VALIDACIÓN -->
+        <div class="ejercicio">
+            <h2>✅ Parte 2: Formulario con Validación</h2>
+
+            <div class="formulario">
+                <form id="form-registro" novalidate>
+                    <div class="form-group">
+                        <label for="usuario">Usuario:</label>
+                        <input type="text" id="usuario" required>
+                        <div id="error-usuario" class="error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="edad">Edad:</label>
+                        <input type="number" id="edad" required>
+                        <div id="error-edad" class="error"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad:</label>
+                        <select id="ciudad" required>
+                            <option value="">Selecciona tu ciudad</option>
+                            <option value="Buenos Aires">Buenos Aires</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Rosario">Rosario</option>
+                            <option value="Mendoza">Mendoza</option>
+                        </select>
+                        <div id="error-ciudad" class="error"></div>
+                    </div>
+                    
+                    <button type="submit">✅ Registrarse</button>
+                </form>
+            </div>
+
+            <div class="resultado" id="resultado-registro">
+                El resultado del registro aparecerá aquí
+            </div>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN PARTE 2:</h4>
+                <div class="code-solucion">const formRegistro = document.querySelector('#form-registro');
+formRegistro.addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const usuario = document.querySelector('#usuario').value;
+    const edad = document.querySelector('#edad').value;
+    const ciudad = document.querySelector('#ciudad').value;
+    
+    // Limpiar errores anteriores
+    document.querySelector('#error-usuario').innerHTML = '';
+    document.querySelector('#error-edad').innerHTML = '';
+    document.querySelector('#error-ciudad').innerHTML = '';
+    
+    // Validar usuario
+    if (usuario.length < 3) {
+        document.querySelector('#error-usuario').innerHTML = 'Usuario debe tener mínimo 3 caracteres';
+        return;
+    }
+    
+    // Validar edad
+    if (edad < 13 || edad > 100) {
+        document.querySelector('#error-edad').innerHTML = 'Edad debe estar entre 13 y 100 años';
+        return;
+    }
+    
+    // Validar ciudad
+    if (ciudad === '') {
+        document.querySelector('#error-ciudad').innerHTML = 'Debes seleccionar una ciudad';
+        return;
+    }
+    
+    // Si todo está bien
+    document.querySelector('#resultado-registro').innerHTML = `
+        <h4>🎉 Registro Exitoso</h4>
+        <p><strong>Usuario:</strong> ${usuario}</p>
+        <p><strong>Edad:</strong> ${edad} años</p>
+        <p><strong>Ciudad:</strong> ${ciudad}</p>
+    `;
+});</div>
+            </div>
+        </div>
+
+        <!-- PARTE 3: BÚSQUEDA EN TIEMPO REAL -->
+        <div class="ejercicio">
+            <h2>🔍 Parte 3: Búsqueda en Tiempo Real</h2>
+
+            <div class="formulario">
+                <form id="form-busqueda">
+                    <div class="form-group">
+                        <label for="buscar">Buscar producto:</label>
+                        <input type="text" id="buscar" placeholder="Escribe para buscar...">
+                    </div>
+                </form>
+            </div>
+
+            <div class="resultado" id="resultado-busqueda">
+                Los resultados de búsqueda aparecerán aquí
+            </div>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN PARTE 3:</h4>
+                <div class="code-solucion">const inputBuscar = document.querySelector('#buscar');
+inputBuscar.addEventListener('keyup', function(event) {
+    const texto = event.target.value;
+    let resultados = [];
+    
+    if (texto !== '') {
+        productos.forEach(function(producto) {
+            if (producto.toLowerCase().includes(texto.toLowerCase())) {
+                resultados.push(producto);
+            }
+        });
+    }
+    
+    const contenedor = document.querySelector('#resultado-busqueda');
+    if (texto === '') {
+        contenedor.innerHTML = 'Los resultados de búsqueda aparecerán aquí';
+    } else if (resultados.length === 0) {
+        contenedor.innerHTML = `<p>No se encontraron productos para: "${texto}"</p>`;
+    } else {
+        let html = `<h4>🔍 Resultados para: "${texto}"</h4>`;
+        resultados.forEach(function(producto) {
+            html += `<p>• ${producto}</p>`;
+        });
+        contenedor.innerHTML = html;
+    }
+});</div>
+            </div>
+        </div>
+
+        <!-- CRITERIOS DE EVALUACIÓN -->
+        <div class="profesor-nota">
+            <h3>📊 CRITERIOS DE EVALUACIÓN</h3>
+            <p><strong>✅ El estudiante debe lograr:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><strong>Parte 1:</strong> Formulario funciona sin recargar página</li>
+                <li><strong>Parte 2:</strong> Validación muestra errores correctos</li>
+                <li><strong>Parte 3:</strong> Búsqueda funciona en tiempo real</li>
+                <li><strong>preventDefault:</strong> Usado correctamente en todos los submit</li>
+                <li><strong>Template strings:</strong> Uso correcto de ${variable}</li>
+            </ul>
+            
+            <p><strong>🚨 Errores comunes:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Olvidar event.preventDefault() - la página se recarga</li>
+                <li>Usar 'submit' en lugar de 'keyup' para búsqueda en tiempo real</li>
+                <li>No limpiar errores anteriores en validación</li>
+                <li>Olvidar usar return para detener ejecución en validaciones</li>
+                <li>No usar .value para obtener datos de inputs</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./ejercicio-3-formularios-solucion.js"></script>
+</html>
+                

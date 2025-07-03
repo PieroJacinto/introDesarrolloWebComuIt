@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4: Import/Export - SOLUCIÓN - Clase 7</title>
+    <link rel="stylesheet" href="./ejercicio-4-import-export-solucion.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>✅ Ejercicio 4: Import/Export - SOLUCIÓN</h1>
+            <p>Versión resuelta para el repositorio del profesor</p>
+        </div>
+
+        <!-- NOTAS PARA EL PROFESOR -->
+        <div class="profesor-nota">
+            <h3>📝 NOTAS PARA EL PROFESOR</h3>
+            <p><strong>⏰ Tiempo de resolución:</strong> 15-20 minutos</p>
+            <p><strong>🎯 Conceptos practicados:</strong> export, import, type="module" (básico)</p>
+            <p><strong>💡 Puntos importantes a explicar:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Necesidad absoluta de servidor local para import/export</li>
+                <li>type="module" es lo que permite usar import/export</li>
+                <li>Rutas relativas: './datos.js' (con punto y slash)</li>
+                <li>Este ejercicio es preparación para el proyecto Cafetería</li>
+            </ul>
+        </div>
+
+        <!-- PARTE 1: ARCHIVO datos.js -->
+        <div class="ejercicio">
+            <h2>📄 Parte 1: Archivo datos.js</h2>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN: datos.js (archivo separado)</h4>
+                <div class="code-solucion">// datos.js
+const animales = [
+    "🐶 Perro",
+    "🐱 Gato", 
+    "🐰 Conejo",
+    "🐻 Oso"
+];
+
+const persona = {
+    nombre: "Ana López",
+    edad: 28,
+    ciudad: "Buenos Aires"
+};
+
+export { animales, persona };</div>
+                <p><strong>🎯 Lo único que agregan:</strong> La línea <code>export { animales, persona }</code></p>
+            </div>
+        </div>
+
+        <!-- PARTE 2: IMPORTAR EN HTML -->
+        <div class="ejercicio">
+            <h2>📥 Parte 2: Import en el archivo principal</h2>
+
+            <button id="btn-animales" class="btn">🐶 Mostrar Animales</button>
+            <button id="btn-persona" class="btn">👤 Mostrar Persona</button>
+
+            <div class="resultado" id="resultado">
+                Haz click en los botones para ver los datos importados
+            </div>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN: Script con import</h4>
+                <div class="code-solucion">// Al inicio del script - ÚNICA LÍNEA QUE AGREGAN
+import { animales, persona } from './datos.js';
+
+// Todo el resto del código YA ESTABA en el ejercicio
+function mostrarAnimales() {
+    const resultado = document.querySelector('#resultado');
+    let html = '<h3>🐶 Lista de Animales:</h3>';
+    
+    animales.forEach(function(animal) {
+        html += `<p>${animal}</p>`;
+    });
+    
+    resultado.innerHTML = html;
+}
+
+function mostrarPersona() {
+    const resultado = document.querySelector('#resultado');
+    resultado.innerHTML = `
+        <h3>👤 Información Personal:</h3>
+        <p><strong>Nombre:</strong> ${persona.nombre}</p>
+        <p><strong>Edad:</strong> ${persona.edad} años</p>
+        <p><strong>Ciudad:</strong> ${persona.ciudad}</p>
+    `;
+}
+
+const btnAnimales = document.querySelector('#btn-animales');
+const btnPersona = document.querySelector('#btn-persona');
+
+btnAnimales.addEventListener('click', mostrarAnimales);
+btnPersona.addEventListener('click', mostrarPersona);</div>
+                <p><strong>🎯 Lo único que agregan:</strong> La línea <code>import { animales, persona } from './datos.js';</code></p>
+            </div>
+        </div>
+
+        <!-- PARTE 3: TYPE MODULE -->
+        <div class="ejercicio">
+            <h2>🔧 Parte 3: type="module"</h2>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN: HTML con type="module"</h4>
+                <div class="code-solucion">&lt;!-- ANTES (como estaba en el ejercicio): --&gt;
+&lt;script&gt;
+    // TODO: Agregar import de animales y persona desde datos.js
+    
+    // resto del código...
+&lt;/script&gt;
+
+&lt;!-- DESPUÉS (lo único que cambian): --&gt;
+&lt;script type="module"&gt;
+    import { animales, persona } from './datos.js';
+    
+    // resto del código igual...
+&lt;/script&gt;</div>
+                <p><strong>🎯 Lo único que agregan:</strong> <code>type="module"</code> al script</p>
+            </div>
+        </div>
+
+        <!-- CRITERIOS DE EVALUACIÓN -->
+        <div class="profesor-nota">
+            <h3>📊 CRITERIOS DE EVALUACIÓN</h3>
+            <p><strong>✅ El estudiante debe lograr:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><strong>Archivo creado:</strong> datos.js con export al final</li>
+                <li><strong>Import correcto:</strong> Sintaxis import al inicio del script</li>
+                <li><strong>type="module":</strong> Agregado al script en HTML</li>
+                <li><strong>Funcionalidad:</strong> Botones funcionan y muestran datos</li>
+                <li><strong>Consola limpia:</strong> Sin errores en DevTools</li>
+            </ul>
+            
+            <p><strong>🚨 Errores comunes:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>No usar servidor local - error CORS</li>
+                <li>Olvidar type="module" - error de import</li>
+                <li>Ruta incorrecta: 'datos.js' en lugar de './datos.js'</li>
+                <li>Export/import no coinciden</li>
+                <li>Crear datos.js en carpeta incorrecta</li>
+            </ul>
+            
+            <p><strong>💡 Después de este ejercicio:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Los estudiantes practican SOLO import/export y type="module"</li>
+                <li>No tuvieron que crear funciones ni datos (eso ya lo saben)</li>
+                <li>Están preparados para entender el proyecto Cafetería completo</li>
+                <li>Pueden aplicar separación de archivos a sus proyectos personales</li>
+                <li>Entienden la sintaxis mínima necesaria: export {}, import {}, type="module"</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Demostración funcionando -->
+     <script type="module" src="./ejercicio-4-import-export-solucion.js"></script>
+    
+</body>
+</html>

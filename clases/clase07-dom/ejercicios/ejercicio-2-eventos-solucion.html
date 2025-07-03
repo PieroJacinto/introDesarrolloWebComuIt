@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2: Eventos - SOLUCIÓN - Clase 7</title>
+    <link rel="stylesheet" href="./ejercicio-2-eventos-solucion.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>✅ Ejercicio 2: Eventos - SOLUCIÓN</h1>
+            <p>Versión resuelta para el repositorio del profesor</p>
+        </div>
+
+        <!-- NOTAS PARA EL PROFESOR -->
+        <div class="profesor-nota">
+            <h3>📝 NOTAS PARA EL PROFESOR</h3>
+            <p><strong>⏰ Tiempo de resolución:</strong> 20-25 minutos</p>
+            <p><strong>🎯 Conceptos practicados:</strong> addEventListener, click, mouseover, mouseout, keyup</p>
+            <p><strong>💡 Puntos importantes a explicar:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Diferencia entre diferentes tipos de eventos</li>
+                <li>Uso de event.target.value para obtener datos del input</li>
+                <li>Template strings vs concatenación tradicional</li>
+                <li>Importancia de verificar que los elementos existen</li>
+            </ul>
+        </div>
+
+        <!-- PARTE 1: EVENTOS DE CLICK -->
+        <div class="ejercicio">
+            <h2>🖱️ Parte 1: Eventos de Click</h2>
+
+            <button id="btn-saludo" class="btn">👋 Botón Saludo</button>
+            <button id="btn-contador" class="btn">🔢 Contador</button>
+            <button id="btn-color" class="btn btn-especial">🎨 Cambiar Color</button>
+
+            <div class="resultado" id="resultado-clicks">
+                Haz click en cualquier botón arriba
+            </div>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN PARTE 1:</h4>
+                <div class="code-solucion">// Event listener para botón saludo
+const btnSaludo = document.querySelector('#btn-saludo');
+btnSaludo.addEventListener('click', function() {
+    const resultado = document.querySelector('#resultado-clicks');
+    resultado.innerHTML = '👋 ¡Hola! Gracias por hacer click';
+});
+
+// Event listener para contador
+const btnContador = document.querySelector('#btn-contador');
+btnContador.addEventListener('click', function() {
+    contador = contador + 1;
+    const resultado = document.querySelector('#resultado-clicks');
+    resultado.innerHTML = `🔢 Clicks: ${contador}`;
+});
+
+// Event listener para cambiar color
+const btnColor = document.querySelector('#btn-color');
+btnColor.addEventListener('click', function() {
+    const resultado = document.querySelector('#resultado-clicks');
+    resultado.style.backgroundColor = '#48bb78';
+});</div>
+            </div>
+        </div>
+
+        <!-- PARTE 2: EVENTOS DE MOUSE -->
+        <div class="ejercicio">
+            <h2>🖱️ Parte 2: Eventos de Mouse</h2>
+
+            <div id="caja-hover" class="caja-interactiva">
+                Pasa el mouse por encima de mí
+            </div>
+
+            <div class="resultado" id="resultado-mouse">
+                Los eventos de mouse aparecerán aquí
+            </div>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN PARTE 2:</h4>
+                <div class="code-solucion">// Event listener para mouseover
+const cajaHover = document.querySelector('#caja-hover');
+cajaHover.addEventListener('mouseover', function() {
+    cajaHover.innerHTML = '🔥 ¡Mouse encima!';
+    cajaHover.style.backgroundColor = '#48bb78';
+    
+    const resultado = document.querySelector('#resultado-mouse');
+    resultado.innerHTML = '➡️ Mouse entró en la caja';
+});
+
+// Event listener para mouseout
+cajaHover.addEventListener('mouseout', function() {
+    cajaHover.innerHTML = 'Pasa el mouse por encima de mí';
+    cajaHover.style.backgroundColor = '#fef5e7';
+    
+    const resultado = document.querySelector('#resultado-mouse');
+    resultado.innerHTML = '⬅️ Mouse salió de la caja';
+});</div>
+            </div>
+        </div>
+
+        <!-- PARTE 3: EVENTOS DE TECLADO -->
+        <div class="ejercicio">
+            <h2>⌨️ Parte 3: Eventos de Teclado</h2>
+
+            <input type="text" id="input-texto" class="input-demo" placeholder="Escribe algo aquí...">
+            
+            <div class="resultado" id="resultado-teclado">
+                Información del teclado aparecerá aquí
+            </div>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN PARTE 3:</h4>
+                <div class="code-solucion">// Event listener para keyup
+const inputTexto = document.querySelector('#input-texto');
+inputTexto.addEventListener('keyup', function(event) {
+    const texto = event.target.value;
+    const resultado = document.querySelector('#resultado-teclado');
+    
+    resultado.innerHTML = `✏️ Escribiste: ${texto}<br>📏 Longitud: ${texto.length} caracteres`;
+});</div>
+            </div>
+        </div>
+
+        <!-- CRITERIOS DE EVALUACIÓN -->
+        <div class="profesor-nota">
+            <h3>📊 CRITERIOS DE EVALUACIÓN</h3>
+            <p><strong>✅ El estudiante debe lograr:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><strong>Parte 1:</strong> Todos los botones responden a clicks correctamente</li>
+                <li><strong>Parte 2:</strong> Efectos de mouse funcionan (hover in/out)</li>
+                <li><strong>Parte 3:</strong> Input responde a teclas y muestra información</li>
+                <li><strong>Template strings:</strong> Usar ${variable} en lugar de concatenación</li>
+                <li><strong>Consola:</strong> Sin errores de JavaScript</li>
+            </ul>
+            
+            <p><strong>🚨 Errores comunes:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Olvidar comillas en el tipo de evento: addEventListener('click', ...)</li>
+                <li>No usar event.target.value para obtener datos del input</li>
+                <li>Confundir querySelector('#id') vs querySelector('.clase')</li>
+                <li>Usar concatenación + en lugar de template strings ${}</li>
+                <li>No verificar que el elemento existe antes de agregar eventos</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./ejercicio-2-eventos-solucion.js"></script>
+</body>
+</html>

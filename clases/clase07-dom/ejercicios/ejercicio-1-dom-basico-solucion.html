@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1: DOM Básico - SOLUCIÓN - Clase 7</title>
+    <link rel="stylesheet" href="./ejercicio-1-dom-basico-solucion.css">
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <div class="header">
+            <h1>✅ Ejercicio 1: DOM Básico - SOLUCIÓN</h1>
+            <p>Versión resuelta para el repositorio del profesor</p>
+        </div>
+
+        <!-- NOTAS PARA EL PROFESOR -->
+        <div class="profesor-nota">
+            <h3>📝 NOTAS PARA EL PROFESOR</h3>
+            <p><strong>⏰ Tiempo de resolución:</strong> 15-20 minutos</p>
+            <p><strong>🎯 Conceptos practicados:</strong> querySelector, innerHTML, textContent, style, forEach</p>
+            <p><strong>💡 Puntos importantes a explicar:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Diferencia entre innerHTML y textContent</li>
+                <li>Cómo resetear estilos con strings vacíos</li>
+                <li>Template literals vs concatenación de strings</li>
+                <li>Verificar en consola que no hay errores</li>
+            </ul>
+        </div>
+
+        <!-- PARTE 1: SELECCIONAR Y CAMBIAR CONTENIDO -->
+        <div class="ejercicio">
+            <h2>📝 Parte 1: Cambiar Contenido</h2>
+
+            <!-- Elementos para modificar -->
+            <div id="titulo-principal" class="demo-element">
+                Título Original
+            </div>
+
+            <div class="mensaje-bienvenida" class="demo-element">
+                Mensaje de bienvenida original
+            </div>
+
+            <div class="resultado" id="resultado-parte1">
+                Aquí aparecerán los resultados de la Parte 1
+            </div>
+
+            <button class="btn" onclick="cambiarContenido()">🔄 Cambiar Contenido</button>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN PARTE 1:</h4>
+                <div class="code-solucion">function cambiarContenido() {
+    // Seleccionar por ID y cambiar contenido
+    const titulo = document.querySelector('#titulo-principal');
+    titulo.innerHTML = '¡Nuevo Título!';
+    
+    // Seleccionar por clase y cambiar texto
+    const mensaje = document.querySelector('.mensaje-bienvenida');
+    mensaje.textContent = '¡Bienvenido a la práctica de DOM!';
+    
+    // Mostrar resultado
+    const resultado = document.querySelector('#resultado-parte1');
+    resultado.innerHTML = '✅ Contenido cambiado exitosamente';
+    
+    console.log('✅ Parte 1 completada');
+}</div>
+            </div>
+        </div>
+
+        <!-- PARTE 2: MODIFICAR ESTILOS -->
+        <div class="ejercicio">
+            <h2>🎨 Parte 2: Cambiar Estilos</h2>
+
+            <div id="caja-demo" class="demo-element">
+                Esta caja cambiará de estilo
+            </div>
+
+            <div class="resultado" id="resultado-parte2">
+                Aquí aparecerán los resultados de la Parte 2
+            </div>
+
+            <button class="btn" onclick="cambiarEstilos()">🎨 Cambiar Estilos</button>
+            <button class="btn" onclick="resetearEstilos()">🔄 Resetear</button>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN PARTE 2:</h4>
+                <div class="code-solucion">function cambiarEstilos() {
+    // Seleccionar elemento y cambiar múltiples estilos
+    const caja = document.querySelector('#caja-demo');
+    caja.style.backgroundColor = '#48bb78';
+    caja.style.color = 'white';
+    caja.style.fontSize = '24px';
+    caja.style.border = '3px solid #2d3748';
+    
+    // Mostrar confirmación
+    const resultado = document.querySelector('#resultado-parte2');
+    resultado.innerHTML = '🎨 Estilos aplicados correctamente';
+}
+
+function resetearEstilos() {
+    // Resetear todos los estilos a valores vacíos
+    const caja = document.querySelector('#caja-demo');
+    caja.style.backgroundColor = '';
+    caja.style.color = '';
+    caja.style.fontSize = '';
+    caja.style.border = '';
+    
+    // Mostrar confirmación
+    const resultado = document.querySelector('#resultado-parte2');
+    resultado.innerHTML = '🔄 Estilos reseteados';
+}</div>
+            </div>
+        </div>
+
+        <!-- PARTE 3: MOSTRAR DATOS -->
+        <div class="ejercicio">
+            <h2>📊 Parte 3: Mostrar Datos</h2>
+
+            <div class="resultado" id="lista-frutas">
+                Aquí aparecerá la lista de frutas
+            </div>
+
+            <div class="resultado" id="lista-personas">
+                Aquí aparecerá la lista de personas
+            </div>
+
+            <button class="btn" onclick="mostrarDatos()">📊 Mostrar Datos</button>
+
+            <div class="solucion">
+                <h4>✅ SOLUCIÓN PARTE 3:</h4>
+                <div class="code-solucion">function mostrarDatos() {
+    // Mostrar frutas
+    const contenedorFrutas = document.querySelector('#lista-frutas');
+    let htmlFrutas = '<h4>🍎 Frutas:</h4>';
+    
+    frutas.forEach(function(fruta) {
+        htmlFrutas += `<p>${fruta}</p>`;
+    });
+    
+    contenedorFrutas.innerHTML = htmlFrutas;
+    
+    // Mostrar personas
+    const contenedorPersonas = document.querySelector('#lista-personas');
+    let htmlPersonas = '<h4>👥 Personas:</h4>';
+    
+    personas.forEach(function(persona) {
+        htmlPersonas += `<p>Nombre: ${persona.nombre}, Edad: ${persona.edad}</p>`;
+    });
+    
+    contenedorPersonas.innerHTML = htmlPersonas;
+    
+    console.log('📊 Datos mostrados correctamente');
+}</div>
+            </div>
+        </div>
+
+        <!-- CRITERIOS DE EVALUACIÓN -->
+        <div class="profesor-nota">
+            <h3>📊 CRITERIOS DE EVALUACIÓN</h3>
+            <p><strong>✅ El estudiante debe lograr:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li><strong>Parte 1:</strong> Cambiar innerHTML y textContent correctamente</li>
+                <li><strong>Parte 2:</strong> Modificar estilos CSS y resetearlos</li>
+                <li><strong>Parte 3:</strong> Usar forEach para mostrar arrays en HTML</li>
+                <li><strong>Consola:</strong> Sin errores de JavaScript</li>
+                <li><strong>Sintaxis:</strong> Usar querySelector correctamente</li>
+            </ul>
+            
+            <p><strong>🚨 Errores comunes:</strong></p>
+            <ul style="margin-left: 20px;">
+                <li>Olvidar el # para IDs y . para clases en querySelector</li>
+                <li>Confundir innerHTML con textContent</li>
+                <li>No usar template literals en forEach</li>
+                <li>Errores de sintaxis en nombres de propiedades CSS</li>
+            </ul>
+        </div>
+    </div>
+    <script src="./ejercicio-1-dom-basico-solucion.js"></script>    
+</body>
+</html>
