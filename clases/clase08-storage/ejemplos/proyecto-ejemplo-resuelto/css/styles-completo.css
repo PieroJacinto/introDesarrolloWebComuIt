@@ -1,0 +1,376 @@
+/* ===========================================
+   RESET Y CONFIGURACIÓN BÁSICA
+   =========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================================
+   TEMA CLARO (POR DEFECTO)
+   =========================================== */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+}
+
+/* ===========================================
+   TEMA OSCURO (CUANDO BODY TIENE CLASE "oscuro")
+   =========================================== */
+body.oscuro {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+/* ===========================================
+   NAVEGACIÓN
+   =========================================== */
+.navbar {
+    background: #6f4e37;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+body.oscuro .navbar {
+    background: #2d1810;
+}
+
+.nav-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-logo {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.btn-tema {
+    background: #ff6b35;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.btn-tema:hover {
+    background: #e55a2b;
+}
+
+body.oscuro .btn-tema {
+    background: #ff8c42;
+}
+
+/* ===========================================
+   CONTENIDO PRINCIPAL
+   =========================================== */
+.main-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.hero {
+    text-align: center;
+    background: white;
+    padding: 60px 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+body.oscuro .hero {
+    background: #2d2d2d;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    color: #6f4e37;
+    margin-bottom: 1rem;
+}
+
+body.oscuro .hero h2 {
+    color: #ff8c42;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+body.oscuro .hero p {
+    color: #ccc;
+}
+
+/* ===========================================
+   PRODUCTOS
+   =========================================== */
+.productos {
+    margin-bottom: 40px;
+}
+
+.productos h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: #6f4e37;
+    margin-bottom: 30px;
+}
+
+body.oscuro .productos h3 {
+    color: #ff8c42;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.producto-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+body.oscuro .producto-card {
+    background: #2d2d2d;
+}
+
+.producto-card:hover {
+    transform: translateY(-5px);
+}
+
+.producto-card h4 {
+    font-size: 1.3rem;
+    color: #6f4e37;
+    margin-bottom: 10px;
+}
+
+body.oscuro .producto-card h4 {
+    color: #ff8c42;
+}
+
+.producto-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+body.oscuro .producto-card p {
+    color: #ccc;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff6b35;
+}
+
+body.oscuro .precio {
+    color: #ff8c42;
+}
+
+/* ===========================================
+   INFORMACIÓN
+   =========================================== */
+.info {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+body.oscuro .info {
+    background: #2d2d2d;
+}
+
+.info h3 {
+    font-size: 1.8rem;
+    color: #6f4e37;
+    margin-bottom: 20px;
+}
+
+body.oscuro .info h3 {
+    color: #ff8c42;
+}
+
+.info ul {
+    list-style: none;
+}
+
+.info li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+body.oscuro .info li {
+    color: #fff;
+}
+
+/* ===========================================
+   FORMULARIO (PARA CONTACTO.HTML)
+   =========================================== */
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+body.oscuro .form-container {
+    background: #2d2d2d;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+body.oscuro .form-group label {
+    color: #fff;
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+body.oscuro .form-input {
+    background: #404040;
+    border-color: #555;
+    color: white;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #6f4e37;
+}
+
+body.oscuro .form-input:focus {
+    border-color: #ff8c42;
+}
+
+.btn-submit {
+    background: #6f4e37;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 5px;
+}
+
+.btn-submit:hover {
+    background: #5d3e2a;
+}
+
+body.oscuro .btn-submit {
+    background: #ff8c42;
+}
+
+body.oscuro .btn-submit:hover {
+    background: #e55a2b;
+}
+
+.resultado-form {
+    background: #e8f5e8;
+    border: 1px solid #4caf50;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-family: monospace;
+}
+
+body.oscuro .resultado-form {
+    background: #2d5a2d;
+    border-color: #4caf50;
+}
+
+/* ===========================================
+   FOOTER
+   =========================================== */
+.footer {
+    background: #6f4e37;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+body.oscuro .footer {
+    background: #2d1810;
+}
+
+/* ===========================================
+   RESPONSIVE
+   =========================================== */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .productos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .main-content {
+        padding: 20px 10px;
+    }
+}
